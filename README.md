@@ -2,7 +2,6 @@
 1. 깃 - 이클립스 연동
  1) Show View - Git - Git Repositories - Clone a Git Repository
  2) - URI: https://github.com/miso921/classimo.git 입력
-    - User: miso921 / password: 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
  3) 디렉토리 설정 후 Finish 클릭
  4) 프로젝트 이름에 오른쪽 마우스 - Team - Share Project - Repository: https://github.com/miso921/classimo.git - Finish 누르면 프로젝트 옆에 main이 뜨면 연동 완료!
 
