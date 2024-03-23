@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/mainlayout}">
+<head th:fragment="header">
+	<!-- css -->
+	<th:block th:fragment="css">
+		<meta charset="UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <meta name="description" content="Premium Tailwind CSS Admin & Dashboard Template" />
+	    <meta name="author" content="Webonzer" />
+	
+	    <!-- Site Tiltle -->
+	    <title>Classimo</title>
+	
+	    <!-- Site favicon -->
+	    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+	
+	    <!-- Custom Style -->
+	    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+	</th:block>
+
+
+	<!-- JS libs -->
+	<th:block th:fragment="script">
+		<!-- All javascirpt -->
+	    <!-- Alpine js -->
+	    <script src="/assets/js/alpine-collaspe.min.js"></script>
+	    <script src="/assets/js/alpine-persist.min.js"></script>
+	    <script src="/assets/js/alpine.min.js" defer></script>
+	
+	    <!-- ApexCharts js -->
+	    <script src="/assets/js/apexcharts.js"></script>
+	    <script src="/assets/js/apexcharts-main.js"></script>
+	
+	    <!-- Custom js -->
+	    <script src="/assets/js/custom.js"></script>
+    </th:block>
+</head>
+</html>
