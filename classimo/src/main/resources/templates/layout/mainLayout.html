@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Classimo</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0" />
+    <!-- content script -->
+    <th:block layout:fragment="css" th:replace="~{fragments/header :: css}"></th:block>
+</head>
+
+<body x-data="main" class="antialiased relative font-inter bg-white dark:bg-black text-black dark:text-white text-sm font-normal overflow-x-hidden vertical" :class="[ $store.app.sidebar ? 'toggle-sidebar' : '', $store.app.rightsidebar ? 'right-sidebar' : '', $store.app.menu, $store.app.layout]">
+    <div id="layout-wrapper">
+    
+    	<!-- Start Menu Sidebar Olverlay -->
+	    <div x-cloak class="fixed inset-0 bg-[black]/60 z-40 lg:hidden" :class="{'hidden' : !$store.app.sidebar}" @click="$store.app.toggleSidebar()"></div>
+	    <!-- End Menu Sidebar Olverlay -->
+	
+	    <!-- Start Right Sidebar Olverlay -->
+	    <div x-cloak class="fixed inset-0 bg-[black]/60 z-50 2xl:hidden" :class="{'hidden' : !$store.app.rightsidebar}" @click="$store.app.rightSidebar()"></div>
+	    <!-- End Right Sidebar Olverlay -->
+	    
+	    
+	    
+	    <!-- Start Main Content -->
+	    <div class="main-container navbar-sticky flex" :class="[$store.app.navbar]">
+            <!-- 여기가 sidebar -->
+	        <th:block th:replace="~{fragments/sidebar :: sidebar}"></th:block>
+	        
+	
+	        <!-- Start Content Area -->
+	        <div class="main-content flex-1">
+	            <!-- 여기가 topbar -->
+	            <th:block th:replace="~{fragments/topbar :: topbar}"></th:block>
+	        
+	            <!-- 여기가 content -->
+				<th:block layout:fragment="content"></th:block>
+	             
+	            <!-- footer -->
+				<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+	            
+	            
+	        </div>
+	        
+            <!-- 여기가 right_sidebar -->
+	        <th:block th:replace="~{fragments/right_sidebar :: right_sidebar}"></th:block>
+		</div>        
+			        
+       
+		<!-- script -->
+	    <th:block layout:fragment="script" th:replace="~{fragments/header :: script}"></th:block>
+		
+	</div>
+</body>
+</html>
